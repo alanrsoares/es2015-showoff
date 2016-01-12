@@ -68,7 +68,7 @@ range(2, 6) //=> [2, 3, 4, 5]
 ### [IMMUTABLE] Sort of a numeric array
 
 ```javascript
-const sort = xs => xs.slice().sort()
+const sort = xs => [...xs].sort((a, b) => a - b)
 ```
 ```javascript
 const a = [3, 1, 2]
