@@ -34,6 +34,16 @@ const unique = xs => [...new Set(xs)]
 unique([1, 2, 2, 5, 1, 2, 4, 32]) //=> [1, 2, 5, 4, 32]
 ```
 
+### Take prop from a list of objects
+
+```javascript
+const pluck = key => xs => xs.map(x => x[key])
+```
+```javascript
+const takeIds = pluck('id')
+takeIds([{ id: 12 }, { id: 2 }, { id: 42 }]) //=> [12, 2, 42]
+```
+
 ### N-Length 'blank' array
 
 ```javascript
