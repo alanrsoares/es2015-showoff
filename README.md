@@ -73,9 +73,9 @@ avg([1, 2, 3]) //=> 2
 
 ```javascript
 const median = xs =>
-  xs.length % 2
-    ? sort(xs)[Math.floor(xs.length / 2)]
-    : sum(sort(xs).slice((xs.length / 2) - 1, (xs.length / 2) + 1)) / 2
+  (l => xs.length % 2
+    ? sort(xs)[Math.floor(l)]
+    : sum(sort(xs).slice(l - 1, l + 1)) / 2)(xs.length / 2)
 ```
 > Example
 ```javascript
