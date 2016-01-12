@@ -48,7 +48,7 @@ takeIds([{ id: 12 }, { id: 2 }, { id: 42 }]) //=> [12, 2, 42]
 ### N-Length 'blank' array
 
 ```javascript
-const array = n => [...Array(Math.max(0, n))]
+const array = n => new Array(Math.max(0, n))
 ```
 ```javascript
 array(3) //=> [undefined, undefined, undefined]
