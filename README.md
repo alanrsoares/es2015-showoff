@@ -41,6 +41,7 @@ const pluck = key => xs => xs.map(x => x[key])
 ```
 ```javascript
 const takeIds = pluck('id')
+const takeIds2 = xs => xs.map(({ id }) => id) // non-generic, using object destructuring
 takeIds([{ id: 12 }, { id: 2 }, { id: 42 }]) //=> [12, 2, 42]
 ```
 
