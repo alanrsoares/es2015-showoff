@@ -22,6 +22,7 @@ const splice = (xs, start, count, ...adds) =>
 ```javascript
 const fishes = ['angel', 'clown', 'mandarin', 'surgeon']
 splice(fishes, 2, 0, 'drum', 'bass') //=> ['angel', 'clown', 'drum', 'bass', 'mandarin', 'surgeon']
+fishes //=> ['angel', 'clown', 'mandarin', 'surgeon']
 ```
 
 ### Unique values in an array
