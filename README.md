@@ -4,12 +4,31 @@ A series of es2015+ examples on IMMUTABLE data manipulation
 
 ### Arrays
 
+### Concatenate Arrays
+
+```javascript
+const concat = (...xss) => xss.reduce((xs, ys) => [...xs, ...ys], [])
+```
+```javascript
+concat([1, 2, 3], [4, 5, 6], [7, 8], [9]) //=> [1, 2, 4, 5, 6, 7, 8, 9]
+```
+
+### [IMMUTABLE] Splice
+
+```javascript
+const splice = (xs, start, count, ...adds) =>
+  [...xs.slice(start, count), ...adds, ...xs.slice(start + count)]
+```
+```javascript
+const fishes = ['angel', 'clown', 'mandarin', 'surgeon']
+splice(fishes, 2, 0, 'drum', 'bass') //=> ['angel', 'clown', 'drum', 'bass', 'mandarin', 'surgeon']
+```
+
 ### Unique values in an array
 
 ```javascript
 const unique = xs => [...new Set(xs)]
 ```
-
 ```javascript
 unique([1, 2, 2, 5, 1, 2, 4, 32]) //=> [1, 2, 5, 4, 32]
 ```
