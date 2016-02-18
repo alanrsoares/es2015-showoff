@@ -76,6 +76,28 @@ sort(a) //=> [1, 2, 3]
 a //=> [3, 1, 2]
 ```
 
+### [IMMUTABLE] Remove array index
+
+```javascript
+const remove = index => xs => [...xs.slice(0, index), ...xs.slice(index + 1)]
+```
+```javascript
+const a = [3, 1, 2]
+remove(0)(a) //=> [1, 2]
+a //=> [3, 1, 2]
+```
+
+### [IMMUTABLE] Update array index
+
+```javascript
+const set = (index, value) => xs => [...xs.slice(0, index), value, ...xs.slice(index + 1)]
+```
+```javascript
+const a = [3, 1, 2]
+set(0, 'foo')(a) //=> ['foo', 1, 2]
+a //=> [3, 1, 2]
+```
+
 ### Sum of a numeric array
 
 ```javascript
